@@ -3,26 +3,55 @@ package trees;
 import node.node;
 
 public class Ejercicio2 {
-    public void inverTree(node<Integer>root){
+
+    public void inverTree(node<Integer> root){
+
         System.out.println("Arbol original:");
+
         printTree(root);
+
         invertirRecursivo(root);
-        System.out.println("Arbol invertido");
+
+        System.out.println("Arbol invertido:");
+
         printTree(root);
 
     }
+
 
     private void invertirRecursivo(node<Integer> root) {
-        if (root == null){
+
+        if(root == null){
             return;
         }
-        System.out.println("actual" + root);
+
+        node<Integer> temp = root.getLeft();
+
+        root.setLeft(root.getRight());
+
+        root.setRight(temp);
+
+
         invertirRecursivo(root.getLeft());
+
         invertirRecursivo(root.getRight());
+
     }
 
+
     private void printTree(node<Integer> root) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'printTree'");
+
+        if(root == null){
+            return;
+        }
+
+
+        System.out.print(root.getValue() + " ");
+
+        printTree(root.getLeft());
+
+        printTree(root.getRight());
+
     }
+
 }
