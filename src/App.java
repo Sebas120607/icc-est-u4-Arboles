@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Set;
+
+import Collections.Set.Sets;
+import models.Contacto;
 import models.Persona;
 import node.node;
 import trees.BinaryTree;
@@ -5,67 +10,103 @@ import trees.Ejercicio1;
 import trees.Ejercicio2;
 import trees.IntTree;
 
-public class App {
+    public class App {
 
     public static void main(String[] args) throws Exception {
 
-        runIntTree();
-        runBinaryTree();
-        runEjercicio1();
-        runEjercicio2();
+        //runIntTree();
+        //runBinaryTree();
+        //runEjercicio1();
+        //runEjercicio2();
+
+    }
+    private static void runSets(){
+        Sets sets = new Sets ();
+
+        // Implementacion -> HashSet hashcode
+        System.out.println("* HashCode");
+        Set<String>HashSet = sets.construirHashSet();
+        System.out.println(HashSet);
+        System.out.println("Size =" + HashSet.size());
+        System.out.println(HashSet.contains("F"));
+
+        ArrayList<String>lis = new ArrayList<>();
+        lis.add("S");
+        System.out.println(lis);
+
+         // Implementacion -> HashSet hashcode
+        System.out.println("* LinkedHashSet");
+        Set<String>lSet = sets.construirHashSet();
+        System.out.println(lSet);
+        System.out.println("Size =" + lSet.size());
+        System.out.println(lSet.contains("F"));
+
+
+         // Implementacion -> HashSet hashcode
+        System.out.println("* HashCode");
+        Set<String>HashSetContacto = sets.construirHashSet();
+        System.out.println(HashSetContacto);
+        System.out.println("Size =" + HashSetContacto.size());
+        System.out.println(HashSetContacto.contains("F"));
+
+         // Implementacion -> HashSet hashcode
+        System.out.println("* construirHashSetContacto ");
+        Set<Contacto>tCSet = sets.construirHasSetContacto();
+        System.out.println(HashSet);
+        System.out.println("Size =" + HashSet.size());
+        
+    }
+
+
+    //private static void runEjercicio1(){
+
+        //Ejercicio1 ejercicio1 = new Ejercicio1();
+
+        //int[] numeros = new int[]{5, 3, 7, 2, 4, 6, 8};
+
+        //ejercicio1.insert(numeros);
 
     }
 
 
-    private static void runEjercicio1(){
-
-        Ejercicio1 ejercicio1 = new Ejercicio1();
-
-        int[] numeros = new int[]{5, 3, 7, 2, 4, 6, 8};
-
-        ejercicio1.insert(numeros);
-
-    }
-
-
-    private static void runEjercicio2(){
+    //private static void runEjercicio2(){
 
         Ejercicio2 ejercicio2 = new Ejercicio2();
 
         int[] numeros2 = new int[]{5, 3, 7, 2, 4, 6, 8};
 
-        BinaryTree<Integer> tree = new BinaryTree<>();
+        //BinaryTree<Integer> tree = new BinaryTree<>();
 
-        for (int numero : numeros2){
+        //for (int numero : numeros2){
 
-            tree.add(numero);
+            //tree.add(numero);
 
-        }
+        //}
 
-        node<Integer> root = tree.getRoot();
+        //node<Integer> root = tree.getRoot();
 
-        ejercicio2.inverTree(root);
+       // ejercicio2.inverTree(root);
 
-    }
+    //}
 
 
-    private static void runBinaryTree(){
+    //private static void runBinaryTree(){
 
         BinaryTree<String> arbolStrings = new BinaryTree<>();
 
         BinaryTree<Persona> arbolPersonas = new BinaryTree<>();
 
-        arbolPersonas.add(new Persona("Pablo",30));
-        arbolPersonas.add(new Persona("Ana",25));
-        arbolPersonas.add(new Persona("Sebastian",29));
-        arbolPersonas.add(new Persona("Jose",26));
+        //arbolPersonas.add(new Persona("Pablo",30));
+        //arbolPersonas.add(new Persona("Ana",25));
+        //arbolPersonas.add(new Persona("Sebastian",29));
+        //arbolPersonas.add(new Persona("Jose",26));
 
-    }
+    //}
 
 
-    private static void runIntTree(){
+    //private static void runIntTree(){
 
-        IntTree arbolNumeros = new IntTree();
+        //IntTree arbolNumeros = new IntTree();
 
         //node<Integer> node1 = new node(50);
         //node<Integer> node2 = new node(10);
@@ -80,6 +121,5 @@ public class App {
 
         //node3.setLeft(node1);
 
-    }
+    
 
-}
